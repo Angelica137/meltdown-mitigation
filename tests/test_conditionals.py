@@ -7,3 +7,7 @@ def test_is_criticality_balanced_returns_true():
 
 def test_is_criticality_balanced_returns_false_product_fail():
     is_criticality_balanced(799, 700) == False
+
+
+def test_is_criticality_balanced_returns_false_temp_fail():
+    is_criticality_balanced(800, 600) == False
