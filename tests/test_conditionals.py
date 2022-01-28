@@ -2,12 +2,16 @@ from scripts.conditionals import *
 
 
 def test_is_criticality_balanced_returns_true():
-    is_criticality_balanced(750, 600) == True
+    assert is_criticality_balanced(750, 600) == True
 
 
 def test_is_criticality_balanced_returns_false_product_fail():
-    is_criticality_balanced(799, 700) == False
+    assert is_criticality_balanced(799, 700) == False
 
 
 def test_is_criticality_balanced_returns_false_temp_fail():
-    is_criticality_balanced(800, 600) == False
+    assert is_criticality_balanced(800, 600) == False
+
+
+def test_reactor_efficiency_returns_orange():
+    assert test_reactor_efficiency(200, 50, 15000) == 'orange'
