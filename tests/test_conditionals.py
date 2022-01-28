@@ -14,4 +14,4 @@ def test_is_criticality_balanced_returns_false_temp_fail():
 
 
 def test_reactor_efficiency_returns_orange():
-    assert test_reactor_efficiency(200, 50, 15000) == 'orange'
+    assert reactor_efficiency(200, 50, 15000) == 'orange'

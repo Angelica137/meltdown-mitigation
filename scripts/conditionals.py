@@ -1,9 +1,16 @@
 def is_criticality_balanced(temep: int, neutrons_emitted: int) -> bool:
     """
-    Returns True is criticality is balanced
-    Criticality is balanced if 
-    :param temperature: is less than 800; and
-    :param neutrons_emitted: is greater than 500; and
-    the product of both parameters is less than 500000
+    Returns True if criticality is balanced
     """
     return temep < 800 and neutrons_emitted > 500 and temep*neutrons_emitted < 500000
+
+
+def reactor_efficiency(voltage: int, current: int, max_power: int) -> str:
+    """
+    Returns traffic light indicator or efficiency
+    Efficincy is measured as a percent and is caluclated
+    (voltage * current/theoretical_max_power)*100
+    """
+    efficiency = (voltage*current/max_power)*100
+    if efficiency < 80:
+        return 'orange'
