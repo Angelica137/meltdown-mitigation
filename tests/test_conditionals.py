@@ -27,3 +27,7 @@ def test_reactor_efficiency_returns_red():
 
 def test_reactor_efficincy_returns_black():
     assert reactor_efficiency(200, 50, 40000) == 'black'
+
+
+def test_fail_safe_returns_DANGER():
+    assert fail_safe(1000, 30, 5000) == 'DANGER'
