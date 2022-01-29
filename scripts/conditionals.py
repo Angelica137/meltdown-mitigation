@@ -2,7 +2,7 @@ def is_criticality_balanced(temp: int, neutrons_emitted: int) -> bool:
     """
     Returns True if criticality is balanced
     """
-    return temep < 800 and neutrons_emitted > 500 and temp*neutrons_emitted < 500000
+    return temp < 800 and neutrons_emitted > 500 and temp*neutrons_emitted < 500000
 
 
 def reactor_efficiency(voltage: int, current: int, max_power: int) -> str:
@@ -25,9 +25,10 @@ def fail_safe(temp: int, neutrons_produced: int, threshold: int) -> str:
     """
     Determins if reactor is at, below or above the ideal criticalicty threshold
     """
-    if threshold*0.1 <= temp*neutrons_produced <= threshold*0.1:
+    criticality = temp * neutrons_produced
+    if threshold*0.1 <= criticality <= threshold*0.1:
         return 'NORMAL'
-    if temp*neutrons_produced < threshold*0.9:
+    if criticality < threshold*0.9:
         return 'LOW'
-    if temp*neutrons_produced > threshold*0.9:
+    if criticality > threshold*0.9:
         return 'DANGER'
