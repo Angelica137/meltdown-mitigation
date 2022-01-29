@@ -12,6 +12,8 @@ def reactor_efficiency(voltage: int, current: int, max_power: int) -> str:
     (voltage * current/theoretical_max_power)*100
     """
     efficiency = (voltage*current/max_power)*100
+    if efficiency < 60:
+        return 'red'
     if efficiency < 80:
         return 'orange'
     if efficiency > 80:
