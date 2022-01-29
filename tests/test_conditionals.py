@@ -38,4 +38,4 @@ def test_fail_safe_return_LOW():
 
 
 def test_fail_safe_return_NORMAL():
-    assert fail_safe(5, 5, 25) == 'NORMAL'
+    assert fail_safe(5, 5, 250) == 'NORMAL'

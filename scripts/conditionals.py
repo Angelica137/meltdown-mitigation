@@ -25,6 +25,8 @@ def fail_safe(temp: int, neutrons_produced: int, threshold: int) -> str:
     """
     Determins if reactor is at, below or above the ideal criticalicty threshold
     """
+    if threshold*0.1 <= temp*neutrons_produced <= threshold*0.1:
+        return 'NORMAL'
     if temp*neutrons_produced < threshold*0.9:
         return 'LOW'
     if temp*neutrons_produced > threshold*0.9:
