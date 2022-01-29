@@ -18,5 +18,4 @@ def reactor_efficiency(voltage: int, current: int, max_power: int) -> str:
         return 'red'
     if efficiency < 80:
         return 'orange'
-    if efficiency > 80:
-        return 'green'
+    return 'green'
