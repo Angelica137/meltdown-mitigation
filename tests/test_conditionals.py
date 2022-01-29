@@ -33,5 +33,9 @@ def test_fail_safe_returns_DANGER():
     assert fail_safe(1000, 30, 5000) == 'DANGER'
 
 
-def test_failSafe_return_LOW():
+def test_fail_safe_return_LOW():
     assert fail_safe(1, 1, 50) == 'LOW'
+
+
+def test_fail_safe_return_NORMAL():
+    assert fail_safe(5, 5, 25) == 'NORMAL'
