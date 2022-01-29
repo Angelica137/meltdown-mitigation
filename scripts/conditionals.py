@@ -11,8 +11,8 @@ def reactor_efficiency(voltage: int, current: int, max_power: int) -> str:
     Efficincy is measured as a percent and is caluclated
     (voltage * current/theoretical_max_power)*100
     """
-    efficiency = (voltage*current/max_power)*100
-    if efficiency < 30:
+    efficiency = (voltage*current/max_power)*100  # O(n^2)
+    if efficiency < 30:    # O(1)
         return 'black'
     if efficiency < 60:
         return 'red'
