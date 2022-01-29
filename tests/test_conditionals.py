@@ -23,3 +23,7 @@ def test_reactor_efficiency_returns_green():
 
 def test_reactor_efficiency_returns_red():
     assert reactor_efficiency(200, 50, 18000) == 'red'
+
+
+def test_reactor_efficincy_returns_black():
+    assert reactor_efficiency(200, 50, 40000) == 'black'
