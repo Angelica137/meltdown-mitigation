@@ -27,3 +27,5 @@ def fail_safe(temp: int, neutrons_produced: int, threshold: int) -> str:
     """
     if temp*neutrons_produced < threshold*0.9:
         return 'LOW'
+    if temp*neutrons_produced > threshold*0.9:
+        return 'DANGER'
