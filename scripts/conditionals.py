@@ -1,8 +1,8 @@
-def is_criticality_balanced(temep: int, neutrons_emitted: int) -> bool:
+def is_criticality_balanced(temp: int, neutrons_emitted: int) -> bool:
     """
     Returns True if criticality is balanced
     """
-    return temep < 800 and neutrons_emitted > 500 and temep*neutrons_emitted < 500000
+    return temep < 800 and neutrons_emitted > 500 and temp*neutrons_emitted < 500000
 
 
 def reactor_efficiency(voltage: int, current: int, max_power: int) -> str:
