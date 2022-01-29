@@ -19,3 +19,11 @@ def reactor_efficiency(voltage: int, current: int, max_power: int) -> str:
     if efficiency < 80:
         return 'orange'
     return 'green'
+
+
+def fail_safe(temp: int, neutrons_produced: int, threshold: int) -> str:
+    """
+    Determins if reactor is at, below or above the ideal criticalicty threshold
+    """
+    if temp*neutrons_produced < threshold*0.9:
+        return 'LOW'

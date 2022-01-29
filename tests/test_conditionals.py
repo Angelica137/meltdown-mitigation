@@ -31,3 +31,7 @@ def test_reactor_efficincy_returns_black():
 
 def test_fail_safe_returns_DANGER():
     assert fail_safe(1000, 30, 5000) == 'DANGER'
+
+
+def test_failSafe_return_LOW():
+    assert fail_safe(1, 1, 50) == 'LOW'
