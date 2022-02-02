@@ -23,7 +23,7 @@ def reactor_efficiency(voltage: int, current: int, max_power: int) -> str:
 
 def fail_safe(temp: int, neutrons_produced: int, threshold: int) -> str:
     """
-    Determins if reactor is at, below or above the ideal criticalicty threshold
+    Determins if reactor is at, below or above the ideal criticality threshold
     """
     criticality = temp * neutrons_produced  # O(n^2)
     if threshold*0.1 <= criticality <= threshold*0.1:  # O(n^2) + O(1) + O(n^2)
