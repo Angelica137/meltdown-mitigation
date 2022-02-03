@@ -26,9 +26,7 @@ def fail_safe(temp: int, neutrons_produced: int, threshold: int) -> str:
     Determins if reactor is at, below or above the ideal criticality threshold
     """
     criticality = temp * neutrons_produced  # O(n^2)
-    parameter_one = threshold - (threshold*0.1)  # O(n^2)
-    paramter_two = threshold + (threshold*0.1)  # O(n^2)
-    if parameter_one <= criticality <= paramter_two:  # O(n^2) + O(1) + O(n^2)
+    if threshold*0.9 <= criticality <= threshold*1.1:  # O(n^2) + O(1) + O(n^2)
         return 'NORMAL'
     if criticality < threshold*0.9:  # O(n^2) + O(1)
         return 'LOW'
