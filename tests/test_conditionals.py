@@ -39,3 +39,7 @@ def test_fail_safe_return_LOW():
 
 def test_fail_safe_return_NORMAL():
     assert fail_safe(10, 901, 10000) == 'NORMAL'
+
+
+def test_fail_safe_returns_NORMAL_2():
+    assert fail_safe(10, 1000, 10000) == 'NORMAL'
