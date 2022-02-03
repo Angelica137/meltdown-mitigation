@@ -32,5 +32,5 @@ def fail_safe(temp: int, neutrons_produced: int, threshold: int) -> str:
         return 'NORMAL'
     if criticality < threshold*0.9:  # O(n^2) + O(1)
         return 'LOW'
-    if criticality > threshold*0.9:  # O(n^2) + O(1)
-        return 'DANGER'
+    # if criticality > threshold*0.9:  # O(n^2) + O(1)
+    return 'DANGER'
