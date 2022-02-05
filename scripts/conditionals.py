@@ -11,7 +11,7 @@ def reactor_efficiency(voltage: int, current: int, max_power: int) -> str:
     Efficincy is measured as a percent and is caluclated
     (voltage * current/theoretical_max_power)*100
     """
-    efficiency = (voltage*current/max_power)*100  # O(n^2)
+    efficiency = (voltage*current/max_power)*100  # O(n)
     if efficiency < 30:    # O(1)
         return 'black'
     if efficiency < 60:
@@ -25,9 +25,9 @@ def fail_safe(temp: int, neutrons_produced: int, threshold: int) -> str:
     """
     Determins if reactor is at, below or above the ideal criticality threshold
     """
-    criticality = temp * neutrons_produced  # O(n^2)
-    if threshold*0.9 <= criticality <= threshold*1.1:  # O(n^2) + O(1) + O(n^2)
+    criticality = temp * neutrons_produced  # O(n)
+    if threshold*0.9 <= criticality <= threshold*1.1:  # O(n) + O(1) + O(n)
         return 'NORMAL'
-    if criticality < threshold*0.9:  # O(n^2) + O(1)
+    if criticality < threshold*0.9:  # O(n) + O(1)
         return 'LOW'
     return 'DANGER'
